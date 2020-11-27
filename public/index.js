@@ -47,7 +47,7 @@ function registerMe() {
           if (responseParse.user) {
             passwordConfirmErrorSpan.style.color = '#5a9e49';
             passwordConfirmErrorSpan.style.display = "initial";
-            passwordConfirmErrorSpan.innerHTML = "Success!";
+            passwordConfirmErrorSpan.innerText = "Success!";
             setTimeout(function() { 
               buildLogin(); 
             }, 2000);
@@ -221,6 +221,8 @@ function buildRegister () {
                           `</div>` +
                           `<span class="login-error" id="register-password-confirm-error"></span>` +
                           `<button class="login-submit" id="register-account" onclick="registerMe()">Register</button>` +
+                          `<p id="login-or">Or</p>` +
+                          `<button class="login-submit" id="register-login" onclick="refreshLogin()">Login</button>` +
                         `</div>` +
                       `</div>`;
   document.getElementById('main').innerHTML = pageHTML;                 
@@ -272,6 +274,7 @@ const bodyClass = document.body.classList;
 bodyClass.add(theme);
 
 function toggleTheme() {
+  console.log('hoi');
   const current = storageLocation.getItem('theme');
   const next = themeMap[current];
   bodyClass.replace(current, next);
@@ -285,11 +288,9 @@ window.onload = function() {
     }
     storageLocation = localStorage;
     refreshLogin();
-    buildPage(storageLocation.getItem('last-action'));
+    //buildPage(storageLocation.getItem('last-action'));
     return;
   } else {
     buildLogin()
   }
 };
-
-document.getElementById('themeButton').onclick = toggleTheme;
