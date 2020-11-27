@@ -1,0 +1,71 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+  <script defer src="index.js"></script>
+  <script src="https://kit.fontawesome.com/1436c21ac9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../aos/aos.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+  </script>
+</head>
+
+<body>
+  <div id="main" class="login-main">
+    <div class=login-container>
+      <div class="brand-area">
+        <i class="fas logo login-logo fa-utensils svg-inline--fa fa-angle-double-right fa-w-14 fa-4x"></i>
+        <span class="brand-name">recipe<b>hub</b></span>
+      </div>
+      <div class="login-form">
+        <div class="login-input-container">
+          <i class="fas fa-envelope"></i>
+          <input type="email" class="login-input" id="login-email" placeholder="Email">
+        </div>
+        <div class="login-input-container">
+          <i class="fas fa-lock"></i> 
+          <input type="password" class="login-input" id="login-password" placeholder="Password">
+        </div>
+        <div id="rem-me-container">
+          <input type="checkbox" id="remember-me" value="rememberMe">
+          <label id="rem-me-label" for="remember-me">Remember Me</label><br>
+        </div>
+        <button class="login-submit" id="login-submit">Login</button>
+      </div>
+    </div>
+  </div>
+ 
+  <nav class="navbar">
+    <div class="logo-container">
+      <i class="fas logo fa-utensils svg-inline--fa fa-angle-double-right fa-w-14 fa-4x"></i>
+    </div>
+    <div class="top-nav">
+      <div onclick="navigateBrowse()" class="item-container">
+        <i class="fas fa-item fa-list fa-3x"></i>
+        <span class="card">Browse</span>
+      </div>
+      <div class="item-container">
+        <i class="fas fa-item fa-plus fa-3x"></i>
+        <span class="card">Add Recipe</span>
+      </div>
+    </div>
+    <div class="bot-nav">
+      <div class="item-container" id="themeButton">
+        <i class="theme-icon fas fa-item fa-sun fa-3x" id=lightIcon></i>
+        <i class="theme-icon fas fa-item fa-moon fa-3x" id=darkIcon></i>
+        <span class="card">Theme</span>
+      </div>
+      <div class="item-container">
+        <i class="fas fa-item fa-sign-out-alt fa-3x"></i>
+        <span class="card">Sign Out</span>
+      </div>
+    </div>
+  </nav>
+<script src="../aos/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
