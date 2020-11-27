@@ -1,15 +1,15 @@
 :root {
   font-size: 16px;
   font-family: 'Open Sans';
-  --site-green: #7fb871;
+  --site-green: #5a9e49;
   --text-primary: #1f1f1f;
   --text-secondary: #000000;
-  --main-bg: #ffffff;
-  --nav-bg:#98ca8c;
+  --main-bg: #ebebeb;
+  --nav-bg: #a4d198;
+  --nav-bg-grey: #1f1f1f;
   --scroll-bg: #f0f0f0;
-  --item-bg: #f0f0f0;
-  --nav-item: #ffffff;
-  --nav-icon: #ffffff;
+  --item-bg: #d1d1d1;
+  --nav-icon: #ebebeb;
 }
 
 body {
@@ -76,9 +76,6 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 0px;
 }
 
-
-
-
 button {
   width: 150px;
   height: 40px;
@@ -108,6 +105,7 @@ button:active {
   width: 320px;
   height: 50px;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .navbar {
@@ -202,6 +200,7 @@ button:active {
   background-color: var(--item-bg);
   color: var(--text-primary);
   height: 30px;
+  width: 265px;
   font-size: 16px;
   padding-left: 15px;
 }
@@ -218,6 +217,19 @@ button:active {
   top: -2px;
   font-size: 13px;
 }
+#login-or {
+  position: relative;
+  left: 150px;
+  padding-top: 0;
+  margin-top: 0;
+}
+.login-error {
+  display: none;
+  color: rgb(255, 106, 93);
+  position: relative;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
 
 .card {
@@ -233,7 +245,7 @@ button:active {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
-  background-color: rgb(61, 61, 61);
+  background-color: var(--nav-bg-grey);
   white-space: nowrap;
   transition: visibility 0s;
 }
@@ -243,6 +255,7 @@ button:active {
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
   --main-bg: #505050;
+  --nav-bg-grey: #1f1f1f;
   --nav-bg: #1f1f1f;
   --scroll-bg: #f0f0f0;
   --item-bg: #303030;
@@ -254,12 +267,12 @@ button:active {
   --site-green: #5a9e49;
   --text-primary: #1f1f1f;
   --text-secondary: #000000;
-  --main-bg: #ffffff;
+  --main-bg: #ebebeb;
   --nav-bg: #a4d198;
+  --nav-bg-grey: #1f1f1f;
   --scroll-bg: #f0f0f0;
-  --item-bg: #e9e9e9;
-  --nav-item: #ffffff;
-  --nav-icon: #ffffff;
+  --item-bg: #d1d1d1;
+  --nav-icon: #ebebeb;
 }
 
 .theme-icon {
@@ -299,5 +312,5 @@ button:active {
   color: var(--site-green);
 }
 .item-container:active .fa-item {
-  color: var(--nav-item);
+  color: var(--nav-icon);
 }

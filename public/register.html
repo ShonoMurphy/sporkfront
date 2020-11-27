@@ -15,7 +15,7 @@
 
 <body>
   <div id="main" class="login-main">
-    <div class="login-container">
+    <div class=login-container>
       <div class="brand-area">
         <i class="fas logo login-logo fa-utensils svg-inline--fa fa-angle-double-right fa-w-14 fa-4x"></i>
         <span class="brand-name">recipe<b>hub</b></span>
@@ -23,21 +23,20 @@
       <div class="login-form">
         <div class="login-input-container">
           <i class="fas fa-envelope"></i>
-          <input type="email" class="login-input" id="login-email" placeholder="Email">
+          <input type="email" class="login-input" id="register-email" placeholder="Email">
         </div>
-        <span class="login-error" id="login-email-error"></span>
+        <span class="login-error" id="register-email-error"></span>
         <div class="login-input-container">
           <i class="fas fa-lock"></i> 
-          <input type="password" class="login-input" id="login-password" placeholder="Password">
+          <input type="password" class="login-input" id="register-password" placeholder="Password">
         </div>
-        <span class="login-error" id="login-password-error"></span>
-        <div id="rem-me-container">
-          <input type="checkbox" id="remember-me">
-          <label id="rem-me-label" for="remember-me">Remember Me</label><br>
+        <span class="login-error" id="register-password-error"></span>
+        <div class="login-input-container">
+          <i class="fas fa-lock"></i> 
+          <input type="password" class="login-input" id="register-password-confirm" placeholder="Confirm Password">
         </div>
-        <button class="login-submit" id="login-submit" onclick="logMeIn()">Login</button>
-        <p id="login-or">Or</p>
-        <button class="login-submit" id="regster-account" onclick="lastAction('buildRecipe')">Register</button>
+        <span class="login-error" id="register-password-confirm-error"></span>
+        <button class="login-submit" id="register-account" onclick="registerMe()">Register</button>
       </div>
     </div>
   </div>
