@@ -112,6 +112,7 @@ function logMeIn() {
           console.log(this.response);
           if (rememberUser) storageLocation = localStorage;
           storageLocation.setItem('auth-token', this.response);
+          buildBrowse();
         } else if (this.status == 400) {
             console.log(this.response)
             switch (this.response) {
@@ -157,6 +158,7 @@ function logMeOut() {
   localStorage.removeItem('auth-token');
   sessionStorage.removeItem('auth-token');
   storageLocation = sessionStorage;
+  buildLogin();
 }
 
 function lastAction (page, id) {
@@ -166,6 +168,7 @@ function lastAction (page, id) {
 }
 
 function buildLogin() {
+  storageLocation.setItem('last-action', 'buildPage');
   document.getElementById('main').innerHTML = '';
   document.getElementById('main').className = 'login-main'
   var pageHTML =      `<div class=login-container>` +
@@ -228,6 +231,21 @@ function buildRegister () {
   document.getElementById('main').innerHTML = pageHTML;                 
 }
 
+function buildBrowse() {
+  if (!storageLocation.getItem('auth-token')) {
+    refreshLogin();
+    return;
+  }
+  document.getElementById('main').innerHTML = '';
+  document.getElementById('main').className = 'main'
+  var pageHTML = `<div class="item" data-aos="zoom-in-right">` +
+                   `<p>Banh mi vaporware hashtag freegan chicharrones woke. Photo booth jianbing swag, distillery wolf chicharrones cloud bread pinterest hexagon meh cardigan asymmetrical artisan. You probably haven't heard of them austin kickstarter, cliche meggings letterpress occupy pickled blog. Cold-pressed vice ethical meh gochujang.</p>` +
+                   `<button class="recipe-button">Full Recipe</button>` +
+                 `</div>`
+  for ( i = 0; i < 15; i++) {
+    document.getElementById('main').innerHTML += pageHTML;
+  } 
+}
 /* TODO
 function buildPage(page, id) {
 
@@ -287,7 +305,7 @@ window.onload = function() {
       localStorage.setItem('last-action', 'buildBrowse');
     }
     storageLocation = localStorage;
-    refreshLogin();
+    buildBrowse();
     //buildPage(storageLocation.getItem('last-action'));
     return;
   } else {
